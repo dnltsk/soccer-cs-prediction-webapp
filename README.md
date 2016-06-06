@@ -2,7 +2,7 @@
 Prediction web application for soccer championship data.
 
 ### data source
-Data from [Fu�balldaten](http://www.fussballdaten.de) and [Transfermarkt](http://www.transfermarkt.co.uk).
+Data from [Fußballdaten](http://www.fussballdaten.de) and [Transfermarkt](http://www.transfermarkt.co.uk).
 
 ### content
 * Dataset is described at [soccer-cs-stats](https://github.com/teeschke/soccer-cs-stats)
