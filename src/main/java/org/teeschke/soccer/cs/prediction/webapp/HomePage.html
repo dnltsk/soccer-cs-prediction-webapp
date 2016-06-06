@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Soccer CS Prediction WebApp</title>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<style>
+			body{
+				width:100%;
+			}
+			.contentWrapper{
+				margin:10px 0 0;
+			}
+			.teamA, .teamB{
+				width:40%;
+				border:solid black 1px;
+				float: left;
+			}
+			.teamB{
+				margin: 0 0 0 10px;
+			}
+			.predict{
+				clear: both;
+				margin: 10px 0 0 10px;
+			}
+
+
+		</style>
+	</head>
+	<body>
+			<div class="contentWrapper">
+
+				<div class="teamA">
+					<h1>Team A</h1>
+					<div wicket:id="teamA"></div>
+				</div>
+
+				<div class="teamB">
+					<h1>Team B</h1>
+					<div wicket:id="teamB"></div>
+				</div>
+
+				<div class="predict">
+					<a href="#" wicket:id="predictLink"><b>predict &gt;</b></a>
+				</div>
+				<div class="matchResult">
+					<span wicket:id="goalsA">?</span>:<span wicket:id="goalsB">?</span> (<span wicket:id="goalsDiff">?</span>)
+				</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd"
+      xml:lang="en"
+      lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TeamContainer</title>
+  <wicket:head>
+    <style>
+      div.wicket-aa-container {width:auto !important;}
+      div.wicket-aa {background-color: white;border:1px solid #ccc;padding:
+      1px;margin-top:1px;text-align:left;}
+      div.wicket-aa ul {list-style:none; padding:0; margin:0;}
+      div.wicket-aa ul li {padding:1px 5px 1px 5px;}
+      div.wicket-aa ul li.selected {background-color:#ff6600}
+    </style>
+  </wicket:head>
+</head>
+<body>
+
+  <wicket:panel>
+    <form wicket:id="linkForm" >
+      <input wicket:id="searchedPlayer" type="text" size="30"/>
+      <a wicket:id="addLink">add</a>
+    </form>
+    <span wicket:id="playerList">
+       <span wicket:id="player">Robert Lewandovski, 70.0</span>
+       <a href="#" wicket:id="removePlayer">rem</a><br/>
+    </span>
+    <br>
+    SUM: <span wicket:id="teamSum"></span> Mio.
+  </wicket:panel>
+
+</body>
+</html>
