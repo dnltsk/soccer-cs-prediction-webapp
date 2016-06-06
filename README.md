@@ -13,7 +13,7 @@ Data from [Fußballdaten](http://www.fussballdaten.de) and [Transfermarkt](http:
 * Web application [heroku](http://heroku.com/)
 
 ### access
-TBC
+[https://soccer-cs-prediction-webapp.herokuapp.com/](https://soccer-cs-prediction-webapp.herokuapp.com/)
 
 ### build and run
 1. build:
