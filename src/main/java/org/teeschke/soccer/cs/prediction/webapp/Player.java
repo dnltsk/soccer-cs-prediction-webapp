@@ -1,8 +1,6 @@
 package org.teeschke.soccer.cs.prediction.webapp;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 
 public class Player implements Serializable{
 

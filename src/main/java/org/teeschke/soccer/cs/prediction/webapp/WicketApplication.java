@@ -7,11 +7,6 @@ import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.markup.html.WebPage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
-/**
- * Application object for your web application.
- * If you want to run this application without deploying, run the Start class.
- *
- */
 @WicketSpringBootApplication
 public class WicketApplication extends WicketBootWebApplication {
 

@@ -2,7 +2,9 @@ package org.teeschke.soccer.cs.prediction.webapp.prediction;
 
 import org.teeschke.soccer.cs.prediction.webapp.Player;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class LinearModel {

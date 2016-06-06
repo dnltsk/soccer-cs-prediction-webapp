@@ -1,8 +1,8 @@
 package org.teeschke.soccer.cs.prediction.webapp.team;
 
+import org.springframework.stereotype.Service;
 import org.teeschke.soccer.cs.prediction.webapp.Player;
 import org.teeschke.soccer.cs.prediction.webapp.SoccerDb;
-import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

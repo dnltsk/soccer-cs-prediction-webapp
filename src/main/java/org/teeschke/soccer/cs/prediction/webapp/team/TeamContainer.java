@@ -21,7 +21,10 @@ import org.teeschke.soccer.cs.prediction.webapp.PlayerConverter;
 
 import javax.inject.Inject;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 
 public class TeamContainer extends Panel implements Serializable {
 
