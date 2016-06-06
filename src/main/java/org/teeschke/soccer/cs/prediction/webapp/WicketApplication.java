@@ -5,7 +5,6 @@ import com.giffing.wicket.spring.boot.starter.context.WicketSpringBootApplicatio
 import org.apache.wicket.Page;
 import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.markup.html.WebPage;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
@@ -15,9 +14,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  */
 @WicketSpringBootApplication
 public class WicketApplication extends WicketBootWebApplication {
-
-  @Value("${db.pass}")
-  public String DB_PASS;
 
   public static void main(String[] args) throws Exception {
     new SpringApplicationBuilder()
