@@ -18,7 +18,7 @@ public class WicketApplication extends WicketBootWebApplication {
 
   @Override
   public RuntimeConfigurationType getConfigurationType() {
-    return RuntimeConfigurationType.DEVELOPMENT;
+    return RuntimeConfigurationType.DEPLOYMENT;
   }
 
   @Override

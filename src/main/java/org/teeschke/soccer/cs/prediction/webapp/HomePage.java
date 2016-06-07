@@ -2,7 +2,6 @@ package org.teeschke.soccer.cs.prediction.webapp;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -28,12 +27,31 @@ public class HomePage extends WebPage implements Serializable{
 		teamA = new ArrayList();
 		teamB = new ArrayList();
 
-		add(new TeamContainer("teamA", new PropertyModel<List<Player>>(HomePage.this, "teamA")));
-		add(new TeamContainer("teamB", new PropertyModel<List<Player>>(HomePage.this, "teamB")));
-
-		add(createPredictLink());
+		add(new TeamContainer("teamA", new PropertyModel<List<Player>>(HomePage.this, "teamA")){
+			@Override
+			public void onTeamChanged() {
+				updatePredictedResult();
+			}
+		});
+		add(new TeamContainer("teamB", new PropertyModel<List<Player>>(HomePage.this, "teamB")){
+			@Override
+			public void onTeamChanged() {
+				updatePredictedResult();
+			}
+		});
 
 		createPredictedResultLabels();
+	}
+
+	private void updatePredictedResult(){
+		if(teamA != null && !teamA.isEmpty()
+				&& teamB != null && !teamB.isEmpty()){
+			try {
+				predictedResult = new LinearModel().predictMatch(teamA, teamB);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private void createPredictedResultLabels() {
@@ -41,7 +59,7 @@ public class HomePage extends WebPage implements Serializable{
 			@Override
 			public Serializable getObject() {
 				if(predictedResult!=null){
-					return predictedResult.goalsA;
+					return String.format("%.2f", predictedResult.goalsA);
 				}
 				return "?";
 			}
@@ -50,7 +68,7 @@ public class HomePage extends WebPage implements Serializable{
 			@Override
 			public Serializable getObject() {
 				if(predictedResult!=null){
-					return predictedResult.goalsB;
+					return String.format("%.2f", predictedResult.goalsB);
 				}
 				return "?";
 			}
@@ -59,24 +77,52 @@ public class HomePage extends WebPage implements Serializable{
 			@Override
 			public Serializable getObject() {
 				if(predictedResult!=null){
-					return predictedResult.goalsDiff;
+					return String.format("%.2f", predictedResult.goalsDiff);
+				}
+				return "?";
+			}
+		}));
+		add(new Label("valueA", new Model(){
+			@Override
+			public Serializable getObject() {
+				Float value = calcTeamSum(teamA);
+				if(value!=null){
+					return String.format("%.2f", value);
+				}
+				return "?";
+			}
+		}));
+		add(new Label("valueB", new Model(){
+			@Override
+			public Serializable getObject() {
+				Float value = calcTeamSum(teamB);
+				if(value!=null){
+					return String.format("%.2f", value);
+				}
+				return "?";
+			}
+		}));
+		add(new Label("valueDiff", new Model(){
+			@Override
+			public Serializable getObject() {
+				Float valueA = calcTeamSum(teamA);
+				Float valueB = calcTeamSum(teamB);
+				if(valueA!=null && valueB!=null){
+					return String.format("%.2f", valueA-valueB);
 				}
 				return "?";
 			}
 		}));
 	}
 
-	private Link createPredictLink() {
-		return new Link("predictLink") {
-			@Override
-			public void onClick() {
-				try {
-					predictedResult = new LinearModel().predictMatch(teamA, teamB);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				setResponsePage(getPage());
-			}
-		};
+	private Float calcTeamSum(List<Player> team){
+		if(team == null || team.isEmpty()){
+			return null;
+		}
+		float sum = 0f;
+		for (Player p : team) {
+			sum += p.marketValueInMio;
+		}
+		return sum;
 	}
 }

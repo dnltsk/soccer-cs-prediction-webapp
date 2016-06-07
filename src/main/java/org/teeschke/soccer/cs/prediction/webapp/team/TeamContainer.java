@@ -26,7 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-public class TeamContainer extends Panel implements Serializable {
+public abstract class TeamContainer extends Panel implements Serializable {
 
   @Inject
   PlayerRepository playerRepository;
@@ -47,9 +47,9 @@ public class TeamContainer extends Panel implements Serializable {
     f.add(createAddLink(autoCompleteTextField));
     add(f);
     add(createTeamList());
-    add(createSumLabel());
   }
 
+  abstract public void onTeamChanged();
 
   private ListView<Player> createTeamList() {
     return new ListView<Player>("playerList", new PropertyModel<List<Player>>(TeamContainer.this, "team")) {
@@ -59,6 +59,7 @@ public class TeamContainer extends Panel implements Serializable {
           @Override
           public void onClick() {
             team.remove(getModelObject());
+            onTeamChanged();
           }
         });
       }
@@ -70,6 +71,7 @@ public class TeamContainer extends Panel implements Serializable {
       public void onSubmit() {
         team.add(autoCompleteTextField.getModelObject());
         autoCompleteTextField.setModelObject(null);
+        onTeamChanged();
       }
     };
   }
@@ -108,23 +110,11 @@ public class TeamContainer extends Panel implements Serializable {
       protected void onUpdate(AjaxRequestTarget target) {
         team.add(autoCompleteTextField.getModelObject());
         autoCompleteTextField.setModelObject(null);
+        onTeamChanged();
         setResponsePage(getPage());
       }
     });
     return autoCompleteTextField;
-  }
-
-  private Label createSumLabel() {
-    return new Label("teamSum", new Model<Float>() {
-      @Override
-      public Float getObject() {
-        float sum = 0f;
-        for (Player p : team) {
-          sum += p.marketValueInMio;
-        }
-        return sum;
-      }
-    });
   }
 
 }

@@ -1,0 +1,104 @@
+body{
+  width:100%;
+  background:url('../img/bg.gif');
+  color:#888;
+  padding:0;
+  margin:0;
+  font: 72.5% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.contentWrapper{
+  margin:20px auto;
+  width:800px
+}
+h1{
+  font-size: 4em;
+  margin: 45px 0;
+  text-align: center;
+}
+
+/*==================================================
+ * Effect 6 from http://cssdeck.com/labs/different-css3-box-shadows-effects
+ * ===============================================*/
+.effect6
+{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect6:before, .effect6:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:50%;
+  bottom:0;
+  left:10px;
+  right:10px;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
+.effect6:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+  -ms-transform:skew(8deg) rotate(3deg);
+  -o-transform:skew(8deg) rotate(3deg);
+  transform:skew(8deg) rotate(3deg);
+}
+
+.teamA, .teamB{
+  background:#FFF;
+  width:45%;
+  padding: 10px;
+  text-align: center;
+  line-height: 2.5em;
+}
+.teamA{
+  float:left;
+}
+.teamB{
+  float:right;
+}
+.team{
+  height:480px;
+}
+
+.matchResult{
+  position: absolute;
+  top: 43px;
+  left: 553px;
+  width: 150px;
+  height: 77px;
+  padding: 5px;
+  font-weight: bold;
+  line-height: 2em;
+  text-align: center;
+  z-index: 2;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(245,191,12,1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(245,191,12,1);
+  box-shadow: 0px 0px 24px 0px rgba(245,191,12,1);
+}
+
+.matchResult .goals{
+  font-size: 2em;
+}
+
+div.wicket-aa-container {width:auto !important;}
+div.wicket-aa {background-color: white;border:1px solid #ccc;padding:
+    1px;margin-top:1px;text-align:left;}
+div.wicket-aa ul {list-style:none; padding:0; margin:0;}
+div.wicket-aa ul li {padding:5px 5px 5px 5px;}
+div.wicket-aa ul li.selected {background-color:#eee}
+
+.network{
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+}

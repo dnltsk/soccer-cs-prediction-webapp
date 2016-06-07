@@ -4,48 +4,41 @@
 		<meta charset="utf-8" />
 		<title>Soccer CS Prediction WebApp</title>
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
-		<style>
-			body{
-				width:100%;
-			}
-			.contentWrapper{
-				margin:10px 0 0;
-			}
-			.teamA, .teamB{
-				width:40%;
-				border:solid black 1px;
-				float: left;
-			}
-			.teamB{
-				margin: 0 0 0 10px;
-			}
-			.predict{
-				clear: both;
-				margin: 10px 0 0 10px;
-			}
-
-
-		</style>
+		<link rel="stylesheet" type="text/css" href="/style/main.css">
 	</head>
 	<body>
 			<div class="contentWrapper">
 
-				<div class="teamA">
+				<div class="teamA effect6">
 					<h1>Team A</h1>
-					<div wicket:id="teamA"></div>
+					<div wicket:id="teamA" class="team"></div>
 				</div>
 
-				<div class="teamB">
+				<div class="teamB effect6">
 					<h1>Team B</h1>
-					<div wicket:id="teamB"></div>
+					<div wicket:id="teamB" class="team"></div>
 				</div>
 
-				<div class="predict">
-					<a href="#" wicket:id="predictLink"><b>predict &gt;</b></a>
-				</div>
 				<div class="matchResult">
-					<span wicket:id="goalsA">?</span>:<span wicket:id="goalsB">?</span> (<span wicket:id="goalsDiff">?</span>)
+					<span class="goals">
+						<span wicket:id="goalsA">?</span> : <span wicket:id="goalsB">?</span>
+						<br>
+						(<span wicket:id="goalsDiff">?</span>)
+					</span>
+					<br>
+					<span class="values">
+						<span wicket:id="valueA">?</span> : <span wicket:id="valueB">?</span> (<span wicket:id="valueDiff">?</span>)
+					</span>
 				</div>
+			</div>
+
+			<div class="network">
+				<a href="https://github.com/teeschke/soccer-cs-prediction-webapp" target="_blank" title="https://github.com/teeschke/soccer-cs-prediction-webapp">
+					<img src="/img/GitHub-Mark-32px.png" alt="octocat">
+				</a>
+				<a href="https://twitter.com/dnltsk" target="_blank" title="@dnltsk">
+					<img src="/img/twitter-32px.png" alt="tweet">
+				</a>
 			</div>
 	</body>
 </html>
