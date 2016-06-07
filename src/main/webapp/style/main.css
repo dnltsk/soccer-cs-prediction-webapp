@@ -97,6 +97,16 @@ div.wicket-aa ul {list-style:none; padding:0; margin:0;}
 div.wicket-aa ul li {padding:5px 5px 5px 5px;}
 div.wicket-aa ul li.selected {background-color:#eee}
 
+.info{
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  width: 200px;
+  font-size: 2em;
+  z-index: 3;
+  line-height: 1.2em;
+}
+
 .network{
   position: fixed;
   bottom: 5px;
