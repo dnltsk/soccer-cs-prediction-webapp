@@ -1,14 +1,16 @@
 language: java
 
 jdk:
-  - oraclejdk8
+- oraclejdk8
 
 cache:
   directories:
-  - $HOME/.m2
+  - "$HOME/.m2"
 
-#deploy:
-#  provider: heroku
-#  app:
-#    master: soccer-cs-prediction-webapp
-#    production: soccer-cs-prediction-webapp
+deploy:
+  provider: heroku
+  api_key:
+    secure: e09dDX2Ly1WqHdFC69UKLPui78kuVWTk73UbRXeWH05uxCN+zwy/Ey+t0VWCO70OqMbFez2n5fU8OthrzfjsAUrui5eh+p+lm/APAZEEpIEF0TnQSZTk9KgzGmoKcR5G4tIxCKl5wP7Wc0tWY/a3NBeOPhWh9oC1rXLvW510TBMcZ1sj7JuKqnoq4b76ovlEqfKmNykW+jzUDNurTa0CT3VBOBg1R9hIZHmkn1VouePI8EyzDXgH90dZ49aJi6X6kYCY90JPy3/l7e8bfGeTy79/ZhuNcM5qxFRWK1oJwvC8e3TOrWAO9AKeTWZK6imWyjHbol1PndytoHusvOekHMh5+LlEJ+R/4b4az1u6Ddx4fDqceTP8jEfDRs32kZ/J1tWoOetPKugIjwF7ybEI0I2JvqnUOPnmOR/ngQYsW3I5ehbWv0dM5LxRxdPg3sPrwEJVWshhRIQ6EvMFSVDJyTt7quuh1MV7ybXZtwTNlygpsYuSZe3vzvSBCY+Gi8KRKF670NkHCJ6SGD0SxlUMvvcHWGYqhFMNlYVK3ObjrpynnFffKmqBEdQVYpkWvCl17wf0yEiyMbu5wBxqvJ0adEL3xUbCCjXVerVx/DXmBNrFBgL1jUOsBJacUSMsLHGCE4VRq/LEbhQ5QLce879V+9HK009Dfxv/elQiJa5Vl7k=
+  app: soccer-cs-prediction-webapp
+  on:
+    repo: teeschke/soccer-cs-prediction-webapp
