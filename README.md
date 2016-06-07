@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/teeschke/soccer-cs-prediction-webapp.png)](https://travis-ci.org/teeschke/soccer-cs-prediction-webapp) [![Heroku](https://heroku-badge.herokuapp.com/?app=soccer-cs-prediction-webapp&style=flat)](https://soccer-cs-prediction-webapp.herokuapp.com/)
+[![Build Status](https://travis-ci.org/teeschke/soccer-cs-prediction-webapp.png)](https://travis-ci.org/teeschke/soccer-cs-prediction-webapp) [![Heroku](https://heroku-badge.herokuapp.com/?app=soccer-cs-prediction-webapp&root=health&style=flat)](https://soccer-cs-prediction-webapp.herokuapp.com/)
 # soccer-cs-prediction-webapp
 Prediction web application for soccer championship data.
 
