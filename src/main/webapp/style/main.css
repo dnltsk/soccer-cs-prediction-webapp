@@ -52,9 +52,10 @@ h1{
   transform:skew(8deg) rotate(3deg);
 }
 
-.teamA, .teamB{
-  background:#FFF;
-  width:45%;
+.teamA, .teamB {
+  margin-top: -82px;
+  background: #FFF;
+  width: 45%;
   padding: 10px;
   text-align: center;
   line-height: 2.5em;
@@ -70,9 +71,9 @@ h1{
 }
 
 .matchResult{
-  position: absolute;
-  top: 43px;
-  left: 553px;
+  position: relative;
+  top: 28px;
+  left: 318px;
   width: 150px;
   height: 77px;
   padding: 5px;
@@ -101,7 +102,7 @@ div.wicket-aa ul li.selected {background-color:#eee}
   position: fixed;
   top: 20px;
   left: 10px;
-  width: 200px;
+  width: 215px;
   font-size: 2em;
   z-index: 3;
   line-height: 1.2em;
@@ -110,5 +111,5 @@ div.wicket-aa ul li.selected {background-color:#eee}
 .network{
   position: fixed;
   bottom: 5px;
-  left: 5px;
+  left: 10px;
 }
