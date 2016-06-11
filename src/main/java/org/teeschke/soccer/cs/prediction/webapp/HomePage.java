@@ -5,7 +5,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.teeschke.soccer.cs.prediction.webapp.prediction.LinearModel;
+import org.teeschke.soccer.cs.prediction.webapp.prediction.DecisionTreeModel;
 import org.teeschke.soccer.cs.prediction.webapp.prediction.PredictedResult;
 import org.teeschke.soccer.cs.prediction.webapp.team.TeamContainer;
 
@@ -47,7 +47,7 @@ public class HomePage extends WebPage implements Serializable{
 		if(teamA != null && !teamA.isEmpty()
 				&& teamB != null && !teamB.isEmpty()){
 			try {
-				predictedResult = new LinearModel().predictMatch(teamA, teamB);
+				predictedResult = new DecisionTreeModel().predictMatch(teamA, teamB);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

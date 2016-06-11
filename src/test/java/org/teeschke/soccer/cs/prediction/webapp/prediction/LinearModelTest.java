@@ -30,8 +30,8 @@ public class LinearModelTest {
    */
   @Test(enabled = false)
   public void r_script_is_executable() throws Exception {
-    LinearModel linearModel = new LinearModel();
-    PredictedResult predictedResult = linearModel.predictMatch(teamA, teamB);
+    PredicitonModel predictionModel = new DecisionTreeModel();
+    PredictedResult predictedResult = predictionModel.predictMatch(teamA, teamB);
     assertNotEquals(predictedResult, null);
   }
 }

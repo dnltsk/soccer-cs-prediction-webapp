@@ -3,12 +3,12 @@
 Prediction web application for soccer championship data.
 
 ### data sources
-* match results and players from [Fußballdaten](http://www.fussballdaten.de)
+* match results and starting 11 from [Fußballdaten](http://www.fussballdaten.de)
 * player's master data and market values from [Transfermarkt](http://www.transfermarkt.co.uk).
 
 ### data description
-* Dataset is described at [soccer-cs-stats](https://github.com/teeschke/soccer-cs-stats)
-* Prediction method described at [soccer-cs-prediction](https://github.com/teeschke/soccer-cs-prediction)
+* dataset is described at [soccer-cs-stats](https://github.com/teeschke/soccer-cs-stats)
+* prediction method described at [soccer-cs-prediction](https://github.com/teeschke/soccer-cs-prediction)
 
 ### hosting
 * PostgresDB hosted on [heliohost](http://heliohost.org/)

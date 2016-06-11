@@ -7,8 +7,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class LinearModel {
+public class LinearModel implements PredicitonModel{
 
+  @Override
   public PredictedResult predictMatch(List<Player> teamA, List<Player> teamB) throws IOException {
     Float valueTeamA = calcTeamValue(teamA);
     Float valueTeamB = calcTeamValue(teamB);
