@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collections;
 
 @Service
 public class PlayerRepository extends SoccerDb {
@@ -55,15 +54,15 @@ public class PlayerRepository extends SoccerDb {
     } finally {
       closeStuff(conn, stmt, rs);
     }
-    return (ArrayList)Collections.emptyList();
+    return new ArrayList<>();
   }
 
   private static void closeStuff(Connection conn, Statement stmt, ResultSet rs) {
     try {
-      if(conn != null && conn.isClosed()){
+      if(conn != null && !conn.isClosed()){
         conn.close();
       }
-      if(stmt != null && stmt.isClosed()){
+      if(stmt != null && !stmt.isClosed()){
         stmt.close();
       }
       if(rs != null &&  !rs.isClosed()){

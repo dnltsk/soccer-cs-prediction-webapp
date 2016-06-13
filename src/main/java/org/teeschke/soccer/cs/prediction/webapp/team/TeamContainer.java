@@ -1,7 +1,5 @@
 package org.teeschke.soccer.cs.prediction.webapp.team;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
 import org.apache.wicket.extensions.ajax.markup.html.autocomplete.AbstractAutoCompleteRenderer;
 import org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteTextField;
 import org.apache.wicket.markup.html.basic.Label;
@@ -105,7 +103,7 @@ public abstract class TeamContainer extends Panel implements Serializable {
     };
 
     autoCompleteTextField.setOutputMarkupId(true);
-    autoCompleteTextField.add(new AjaxFormComponentUpdatingBehavior("change") {
+    /*autoCompleteTextField.add(new AjaxFormComponentUpdatingBehavior("change") {
       @Override
       protected void onUpdate(AjaxRequestTarget target) {
         team.add(autoCompleteTextField.getModelObject());
@@ -113,7 +111,7 @@ public abstract class TeamContainer extends Panel implements Serializable {
         onTeamChanged();
         setResponsePage(getPage());
       }
-    });
+    });*/
     return autoCompleteTextField;
   }
 

@@ -11,18 +11,25 @@ public class PlayerConverter implements IConverter<Player> {
 
   @Override
   public Player convertToObject(String s, Locale locale) throws ConversionException {
-    String[] text = s.split(delim);
-    Player player = new Player();
-    player.id = Long.parseLong(text[0]);
-    player.nationality = text[1];
-    player.fullName = text[2];
-    player.verticalPosition = text[3];
-    player.marketValueInMio = Float.parseFloat(text[4]);
-    return player;
+    try {
+      String[] text = s.split(delim);
+      Player player = new Player();
+      player.id = Long.parseLong(text[0]);
+      player.nationality = text[1];
+      player.fullName = text[2];
+      player.verticalPosition = text[3];
+      player.marketValueInMio = Float.parseFloat(text[4]);
+      return player;
+    } catch (NumberFormatException e) {
+      return null;
+    }
   }
 
   @Override
   public String convertToString(Player player, Locale locale) {
+    if(player == null){
+      return "";
+    }
     return player.id+delim+
         player.nationality+delim+
         player.fullName+delim+

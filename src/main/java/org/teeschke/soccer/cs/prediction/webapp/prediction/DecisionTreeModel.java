@@ -65,19 +65,19 @@ public class DecisionTreeModel implements PredicitonModel{
   }
 
   private Float calcOffenseValue(List<Player> team) {
-    return calcPositionValue(team, "OFF");
+    return calcPositionValue(team, "OFFENSE");
   }
 
   private Float calcMidfieldValue(List<Player> team) {
-    return calcPositionValue(team, "MID");
+    return calcPositionValue(team, "MIDFIELD");
   }
 
   private Float calcDefenseValue(List<Player> team) {
-    return calcPositionValue(team, "DEF");
+    return calcPositionValue(team, "DEFENSE");
   }
 
   private Float calcKeeperValue(List<Player> team) {
-    return calcPositionValue(team, "KEE");
+    return calcPositionValue(team, "KEEPER");
   }
 
   private Float calcPositionValue(List<Player> team, String position) {
